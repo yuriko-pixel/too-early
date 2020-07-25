@@ -1,22 +1,56 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { Link, useStaticQuery, graphql } from "gatsby"
+import indexstyle from '../styles/indexstyle.module.scss'
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulBlogPost (sort: {fields: publishedDate, order: DESC}) {
+        edges {
+          node {
+            title
+            publishedDate (formatString: "MMMM Do,YYYY")
+            slug
+            heading
+            headerImage {
+              resize (width:500,height:300) {
+                src
+              }
+            }
+            tag {
+              tag
+            }
+          }
+        }
+      }
+    }
+  `)
 
+  return (
+    <Layout>
+      <ol>
+        {data.allContentfulBlogPost.edges.map(edge => {
+          return(
+            <li className={indexstyle.container}>
+              <Link to={`/${edge.node.slug}`}>
+                <div className={indexstyle.flex}>
+                  <img src={edge.node.headerImage.resize.src} className={indexstyle.img}/>
+                  <div>
+                    <div className={indexstyle.link} className={indexstyle.date}>{edge.node.publishedDate}</div>
+                    <div className={indexstyle.link} className={indexstyle.title}>{edge.node.title}</div>
+                    <div className={indexstyle.heading}>{edge.node.heading}</div>
+                    <div className={indexstyle.read}>Read more &#62;&#62;</div>
+                    
+                    
+                  </div>
+                </div>
+              </Link>
+            </li>)
+        })}
+      </ol>
+    </Layout>
+  )
+
+}
 export default IndexPage
