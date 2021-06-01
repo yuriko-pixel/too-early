@@ -1,0 +1,27 @@
+.navcontainer,.nav {
+    display: none;
+}
+
+@media screen and (max-width: 479px) {
+.navcontainer, .nav {
+    display: block;
+    list-style: none;
+}
+
+.navcontainer {
+    width: 70%;
+    background-color: gray;
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+}
+
+.navlink {
+    margin: 0 5px;
+    font-size: 20px;
+}
+}
+
+
+    

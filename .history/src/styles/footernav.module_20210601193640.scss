@@ -1,0 +1,17 @@
+.nav {
+    display: none;
+}
+
+@media screen and (max-width: 479px) {
+.nav {
+    display: block;
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+}
+}
+
+
+    

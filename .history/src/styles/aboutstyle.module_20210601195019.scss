@@ -20,7 +20,6 @@
 @media screen and (max-width: 479px) {
   .container {
     width: 300px;
-    font-size: 15px;
   }
   .title {
     font-size: 30px;
@@ -30,6 +29,6 @@
   }
   .text {
     width: 300px;
-    margin-bottom: 50px;
+    margin: 10px auto;
   }
 }

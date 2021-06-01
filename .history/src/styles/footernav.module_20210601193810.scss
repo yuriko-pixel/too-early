@@ -1,0 +1,22 @@
+.nav {
+    display: none;
+}
+
+@media screen and (max-width: 479px) {
+.nav {
+    display: block;
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.navlink {
+    margin: 0 5px;
+    font-size: 20px;
+}
+}
+
+
+    
