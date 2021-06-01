@@ -36,7 +36,7 @@ const IndexPage = () => {
               <Link to={`/${edge.node.slug}`}>
                 <div className={indexstyle.flex}>
                   <img src={edge.node.headerImage.resize.src} className={indexstyle.img}/>
-                  <div className={indexstyle.blogbody}>
+                  <div>
                     <div className={indexstyle.link} className={indexstyle.date}>{edge.node.publishedDate}</div>
                     <div className={indexstyle.link} className={indexstyle.title}>{edge.node.title}</div>
                     <div className={indexstyle.heading}>{edge.node.heading}</div>

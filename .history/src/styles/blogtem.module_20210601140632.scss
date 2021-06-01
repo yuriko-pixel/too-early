@@ -23,9 +23,6 @@
   margin:0 auto;
   text-align: left;
 }
-.goback {
-  margin-left: 140px;
-}
 
 @media screen and (max-width: 479px) {
   .title {
@@ -44,10 +41,7 @@
     width:300px;
   }
 
- #player {
+  #player {
     width:300px;
-    background-size: 300px;
   }
-
-  
 }

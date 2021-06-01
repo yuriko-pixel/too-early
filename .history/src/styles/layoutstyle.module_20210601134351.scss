@@ -1,0 +1,11 @@
+.footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+  .blogbody {
+    width: 300px;
+  }
+}

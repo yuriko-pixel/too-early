@@ -53,7 +53,7 @@ const options = {
                 }}
               />
               </div>
-          <h3><Link to="/"  className={blogtem.goback}>TOPに戻る</Link></h3>
+          <Link to="/"  className={blogtem.goback}>TOPに戻る</Link>
         </Layout>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import {graphql, Link} from 'gatsby'
+import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import blogtem from '../styles/blogtem.module.scss'
 
@@ -52,8 +52,8 @@ const options = {
                   __html: props.data.contentfulBlogPost.body.body,
                 }}
               />
-              </div>
-          <h3><Link to="/"  className={blogtem.goback}>TOPに戻る</Link></h3>
+          </div>
+          <Link to="/">戻る</Link>
         </Layout>
     )
 }

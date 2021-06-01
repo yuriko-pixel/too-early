@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header/>
-        <main className={layoutstyle.blogbody}>{children}</main>
+        <main>{children}</main>
         <footer className={layoutstyle.footer}>
           © {new Date().getFullYear()}, Created By TooEarly?
         </footer>
